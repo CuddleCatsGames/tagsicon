@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tags with Icons</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=select_check_box" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=counter_1" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=counter_2" />
+    <style>
+        /* Add some basic styling */
+        #tags-container {
+            font-size: 18px;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .tag {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="tags-container"></div>
+
+    <script>
+        // JavaScript code here
+        const tags = {
+            'is-open-now': {
+                name: 'Open Now',
+                color: '#5f6368',
+                icon: '<span class="material-symbols-outlined">select_check_box</span>,
+            },
+             'administrative_area_level_1': {
+            name: 'Administrative Area Level 1',
+            color: '#5f6368'
+            icon: '<span class="material-symbols-outlined">counter_1</span>',
+        },
+        'administrative_area_level_2': {
+            name: 'Administrative Area Level 2',
+            color: '#eee'
+            icon: '<span class="material-symbols-outlined">counter_1</span>',
+        },
+        'administrative_area_level_3': {
+            name: 'Administrative Area Level 3',
+            color: '#eee'
+            icon: '<span class="material-symbols-outlined">counter_1</span>',
+        },
+        'administrative_area_level_4': {
+            name: 'Administrative Area Level 4',
+            color: '#eee'
+            icon: '<span class="material-symbols-outlined">counter_1</span>',
+        },
+        'administrative_area_level_5': {
+            name: 'Administrative Area Level 5',
+            color: '#eee'
+            icon: '<span class="material-symbols-outlined">counter_1</span>',
+        },
+        'administrative_area_level_6': {
+            name: 'Administrative Area Level 6',
+            color: '#eee'
+            icon: '<span class="material-symbols-outlined">counter_1</span>',
+        },
+        'administrative_area_level_7': {
+            name: 'Administrative Area Level 7',
+            color: '#eee'
+            icon: '<span class="material-symbols-outlined">counter_1</span>',
+        },
+        'archipelago': {
+            name: 'Archipelago',
+            color: '#eee'
+            icon: '<span class="material-symbols-outlined">counter_1</span>',
+        },
+        'colloquial_area': {
+            name: 'Colloquial Area',
+            color: '#eee'
+        },
+        'continent': {
+            name: 'Continent',
+            color: '#eee'
+        },
+        'country': {
+            name: 'Country',
+            color: '#eee'
+        },
+        'establishment': {
+            name: 'Establishment',
+            color: '#eee'
+        },
+        'finance': {
+            name: 'Finance',
+            color: '#eee'
+        },
+        'floor': {
+            name: 'Floor',
+            color: '#eee'
+        },
+        'food': {
+            name: 'Food',
+            color: '#eee'
+        },
+        'general_contractor': {
+            name: 'General Contractor',
+            color: '#eee'
+        },
+        'geocode': {
+            name: 'Geocode',
+            color: '#eee'
+        },
+        'health': {
+            name: 'Health',
+            color: '#eee'
+        },
+        'intersection': {
+            name: 'Intersection',
+            color: '#eee'
+        },
+        'landmark': {
+            name: 'Landmark',
+            color: '#eee'
+        },
+        'locality': {
+            name: 'Locality',
+            color: '#eee'
+        },
+        'natural_feature': {
+            name: 'Natural Feature',
+            color: '#eee'
+        },
+        'neighborhood': {
+            name: 'Neighborhood',
+            color: '#eee'
+        },
+        'place_of_worship': {
+            name: 'Place of Worship',
+            color: '#eee'
+        },
+        'plus_code': {
+            name: 'Plus Code',
+            color: '#eee'
+        },
+        'point_of_interest': {
+            name: 'Point of Interest',
+            color: '#eee'
+        },
+        'political': {
+            name: 'Political',
+            color: '#eee'
+        },
+
+        'post_box': {
+            name: 'Post Box',
+            color: '#eee'
+        },
+
+        'postal_code': {
+            name: 'Postal Code',
+            color: '#eee'
+        },
+        'postal_code_prefix': {
+            name: 'Postal Code Prefix',
+            color: '#eee'
+        },
+        'postal_code_suffix': {
+            name: 'Postal Code Suffix',
+            color: '#eee'
+        },
+        'postal_town': {
+            name: 'Postal Town',
+            color: '#eee'
+        },
+
+        'premise': {
+            name: 'Premise',
+            color: '#eee'
+        },
+
+        'room': {
+            name: 'Room',
+            color: '#eee'
+        },
+        'route': {
+            name: 'Route',
+            color: '#eee'
+        },
+
+        'street_address': {
+            name: 'Street Address',
+            color: '#eee'
+        },
+        'street_number': {
+            name: 'Street Number',
+            color: '#eee'
+        },
+
+        'sublocality': {
+            name: 'Sublocality',
+            color: '#eee'
+        },
+
+        'sublocality_level_1': {
+            name: 'Sublocality Level 1',
+            color: '#eee'
+        },
+        'sublocality_level_2': {
+            name: 'Sublocality Level 2',
+            color: '#eee'
+        },
+        'sublocality_level_3': {
+            name: 'Sublocality Level 3',
+            color: '#eee'
+        },
+        'sublocality_level_4': {
+            name: 'Sublocality Level 4',
+            color: '#eee'
+        },
+        'sublocality_level_5': {
+            name: 'Sublocality Level 5',
+            color: '#eee'
+        },
+
+        'subpremise': {
+            name: 'Subpremise',
+            color: '#eee'
+        },
+
+        'town_square': {
+            name: 'Town Square',
+            color: '#eee'
+        },
+
+        "accounting": {
+            name: 'Accounting',
+            color: '#eee'
+        },
+        "airport": {
+            name: 'Airport',
+            color: '#eee'
+        },
+        "amusement_park": {
+            name: 'Amusement Park',
+            color: '#eee'
+        },
+        "aquarium": {
+            name: 'Aquarium',
+            color: '#eee'
+        },
+        "art_gallery": {
+            name: 'Art Gallery',
+            color: '#eee'
+        },
+        "atm": {
+            name: 'ATM',
+            color: '#eee'
+        },
+        "bakery": {
+            name: 'Bakery',
+            color: '#eee'
+        },
+        "bank": {
+            name: 'Bank',
+            color: '#eee'
+        },
+        "bar": {
+            name: 'Bar',
+            color: '#eee'
+        },
+        "beauty_salon": {
+            name: 'Beauty Salon',
+            color: '#eee'
+        },
+        "bicycle_store": {
+            name: 'Bicycle Store',
+            color: '#eee'
+        },
+        "book_store": {
+            name: 'Book Store',
+            color: '#eee'
+        },
+        "bowling_alley": {
+            name: 'Bowling Alley',
+            color: '#eee'
+        },
+        "bus_station": {
+            name: 'Bus Station',
+            color: '#eee'
+        },
+        "cafe": {
+            name: 'Cafe',
+            color: '#eee'
+        },
+        "campground": {
+            name: 'Campground',
+            color: '#eee'
+        },
+
+        "car_dealer": {
+            name: 'Car Dealer',
+            color: '#eee',
+            icon: 'directions_car'
+        },
+        "car_rental": {
+            name: 'Car Rental',
+            color: '#eee',
+            icon: 'directions_car'
+        },
+        "car_repair": {
+            name: 'Car Repair',
+            color: '#eee',
+            icon: 'directions_car'
+        },
+        "car_wash": {
+            name: 'Car Wash',
+            color: '#eee',
+            icon: 'directions_car'
+        },
+
+        "casino": {
+            name: 'Casino',
+            color: '#eee'
+        },
+        "cemetery": {
+            name: 'Cemetery',
+            color: '#eee'
+        },
+        "church": {
+            name: 'Church',
+            color: '#eee'
+        },
+        "city_hall": {
+            name: 'City Hall',
+            color: '#eee'
+        },
+        "clothing_store": {
+            name: 'Clothing Store',
+            color: '#eee'
+        },
+        "convenience_store": {
+            name: 'Convenience Store',
+            color: '#eee'
+        },
+        "courthouse": {
+            name: 'Courthouse',
+            color: '#eee'
+        },
+        "dentist": {
+            name: 'Dentist',
+            color: '#eee'
+        },
+        "department_store": {
+            name: 'Department Store',
+            color: '#eee'
+        },
+        "doctor": {
+            name: 'Doctor',
+            color: '#eee'
+        },
+        "drugstore": {
+            name: 'Drugstore',
+            color: '#eee'
+        },
+        "electrician": {
+            name: 'Electrician',
+            color: '#eee'
+        },
+        "electronics_store": {
+            name: 'Electronics Store',
+            color: '#eee'
+        },
+        "embassy": {
+            name: 'Embassy',
+            color: '#eee'
+        },
+        "fire_station": {
+            name: 'Fire Station',
+            color: '#eee'
+        },
+        "florist": {
+            name: 'Florist',
+            color: '#eee'
+        },
+        "funeral_home": {
+            name: 'Funeral Home',
+            color: '#eee'
+        },
+        "furniture_store": {
+            name: 'Furniture Store',
+            color: '#eee'
+        },
+        "gas_station": {
+            name: 'Gas Station',
+            color: '#eee'
+        },
+        "gym": {
+            name: 'Gym',
+            color: '#eee'
+        },
+        "hair_care": {
+            name: 'Hair Care',
+            color: '#eee'
+        },
+        "hardware_store": {
+            name: 'Hardware Store',
+            color: '#eee'
+        },
+        "hindu_temple": {
+            name: 'Hindu Temple',
+            color: '#eee'
+        },
+        "home_goods_store": {
+            name: 'Home Goods Store',
+            color: '#eee'
+        },
+        "hospital": {
+            name: 'Hospital',
+            color: '#eee'
+        },
+        "insurance_agency": {
+            name: 'Insurance Agency',
+            color: '#eee'
+        },
+        "jewelry_store": {
+            name: 'Jewelry Store',
+            color: '#eee'
+        },
+        "laundry": {
+            name: 'Laundry',
+            color: '#eee'
+        },
+        "lawyer": {
+            name: 'Lawyer',
+            color: '#eee'
+        },
+        "library": {
+            name: 'Library',
+            color: '#eee'
+        },
+        "light_rail_station": {
+            name: 'Light Rail Station',
+            color: '#eee'
+        },
+        "liquor_store": {
+            name: 'Liquor Store',
+            color: '#eee'
+        },
+        "local_government_office": {
+            name: 'Local Government Office',
+            color: '#eee'
+        },
+        "locksmith": {
+            name: 'Locksmith',
+            color: '#eee'
+        },
+        "lodging": {
+            name: 'Lodging',
+            color: '#eee'
+        },
+        "meal_delivery": {
+            name: 'Meal Delivery',
+            color: '#eee'
+        },
+        "meal_takeaway": {
+            name: 'Meal Takeaway',
+            color: '#eee'
+        },
+        "mosque": {
+            name: 'Mosque',
+            color: '#eee'
+        },
+        "movie_rental": {
+            name: 'Movie Rental',
+            color: '#eee'
+        },
+        "movie_theater": {
+            name: 'Movie Theater',
+            color: '#eee'
+        },
+        "moving_company": {
+            name: 'Moving Company',
+            color: '#eee'
+        },
+        "museum": {
+            name: 'Museum',
+            color: '#eee'
+        },
+        "night_club": {
+            name: 'Night Club',
+            color: '#eee'
+        },
+        "painter": {
+            name: 'Painter',
+            color: '#eee'
+        },
+        "park": {
+            name: 'Park',
+            color: '#eee'
+        },
+        "parking": {
+            name: 'Parking',
+            color: '#eee'
+        },
+        "pet_store": {
+            name: 'Pet Store',
+            color: '#eee'
+        },
+        "pharmacy": {
+            name: 'Pharmacy',
+            color: '#eee'
+        },
+        "physiotherapist": {
+            name: 'Physiotherapist',
+            color: '#eee'
+        },
+        "plumber": {
+            name: 'Plumber',
+            color: '#eee'
+        },
+        "police": {
+            name: 'Police',
+            color: '#eee'
+        },
+        "post_office": {
+            name: 'Post Office',
+            color: '#eee'
+        },
+        "primary_school": {
+            name: 'Primary School',
+            color: '#eee'
+        },
+        "real_estate_agency": {
+            name: 'Real Estate Agency',
+            color: '#eee'
+        },
+        "restaurant": {
+            name: 'Restaurant',
+            color: '#eee'
+        },
+        "roofing_contractor": {
+            name: 'Roofing Contractor',
+            color: '#eee'
+        },
+        "rv_park": {
+            name: 'RV Park',
+            color: '#eee'
+        },
+        "school": {
+            name: 'School',
+            color: '#eee'
+        },
+        "secondary_school": {
+            name: 'Secondary School',
+            color: '#eee'
+        },
+        "shoe_store": {
+            name: 'Shoe Store',
+            color: '#eee'
+        },
+        "shopping_mall": {
+            name: 'Shopping Mall',
+            color: '#eee'
+        },
+        "spa": {
+            name: 'Spa',
+            color: '#eee'
+        },
+        "stadium": {
+            name: 'Stadium',
+            color: '#eee'
+        },
+        "storage": {
+            name: 'Storage',
+            color: '#eee'
+        },
+        "store": {
+            name: 'Store',
+            color: '#eee'
+        },
+        "subway_station": {
+            name: 'Subway Station',
+            color: '#eee'
+        },
+        "supermarket": {
+            name: 'Supermarket',
+            color: '#eee'
+        },
+        "synagogue": {
+            name: 'Synagogue',
+            color: '#eee'
+        },
+        "taxi_stand": {
+            name: 'Taxi Stand',
+            color: '#eee'
+        },
+        "tourist_attraction": {
+            name: 'Tourist Attraction',
+            color: '#eee'
+        },
+        "train_station": {
+            name: 'Train Station',
+            color: '#eee'
+        },
+        "transit_station": {
+            name: 'Transit Station',
+            color: '#eee'
+        },
+        "travel_agency": {
+            name: 'Travel Agency',
+            color: '#eee'
+        },
+        "university": {
+            name: 'University',
+            color: '#eee'
+        },
+        "veterinary_care": {
+            name: 'Veterinary Care',
+            color: '#eee'
+        },
+        "zoo": {
+            name: 'Zoo',
+            color: '#eee'
+        },
+
+        "is-wheelchair-accessible": {
+            name: 'Wheelchair Accessible',
+            color: '#eee',
+            icon: 'accessible',
+        },
+
+        "does-reservations": {
+            name: 'Offers Reservations',
+            color: '#eee',
+            icon: '',
+        },
+        "does-deliver": {
+            name: 'Delivers',
+            color: '#eee',
+            icon: '',
+        },
+        "does-dineIn": {
+            name: 'Dine In',
+            color: '#eee'
+        },
+        "does-curbside-pickup": {
+            name: 'Curbside Pickup',
+            color: '#eee',
+            icon: '',
+        },
+        "does-takeout": {
+            name: 'Takeout',
+            color: '#eee',
+            icon: '',
+        },
+
+        "serves-beer": {
+            name: 'Beer',
+            color: '#eee',
+            icon: '',
+        },
+        "serves-brunch": {
+            name: 'Brunch',
+            color: '#eee',
+            icon: '',
+        },
+        "serves-lunch": {
+            name: 'Lunch',
+            color: '#eee',
+            icon: '',
+        },
+        "serves-dinner": {
+            name: 'Dinner',
+            color: '#eee',
+            icon: '',
+        },
+
+        "serves-vegetarian-food": {
+            name: 'Vegetarian Options',
+            color: '#eee',
+            icon: '',
+        },
+        "serves-wine": {
+            name: 'Wine',
+            color: '#eee',
+            icon: '',
+        },
+
+        'good-for-kids': {
+            name: 'Good for Kids',
+            color: '#75f7a3',
+            icon: '',
+        },
+        'good-for-families': {
+            name: 'Good for Families',
+            color: '#eee',
+            icon: '',
+        },
+        'good-for-couples': {
+            name: 'Good for Couples',
+            color: '#eee',
+            icon: '',
+        },
+
+        'new': {
+            name: 'New',
+            color: '#eee',
+            icon: '',
+        }
+
+    };
+
+        const renderTags = () => {
+            const container = document.getElementById('tags-container');
+            container.innerHTML = ''; // Clear previous content
+
+            Object.values(tags).forEach(tag => {
+                const tagElement = document.createElement('div');
+                tagElement.classList.add('tag');
+                tagElement.style.color = tag.color;
+                tagElement.innerHTML = `${tag.icon} <span>${tag.name}</span>`;
+                container.appendChild(tagElement);
+            });
+        };
+
+        document.addEventListener('DOMContentLoaded', renderTags);
+    </script>
+</body>
+</html>
